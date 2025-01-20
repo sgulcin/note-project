@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Background Image</title>
+    <link href="../dist/style.css" rel="stylesheet">
+</head>
+<body class="bg-slate-100">
+    <header class="bg-slate-50 shadow p-4 flex justify-between items-center">
+        <h1 class="font-mono text-2xl font-bold">Note App</h1>
+        <div class="relative">
+          <button id="dropdownButton" class="bg-gray-200 text-gray-700 px-4 py-2 rounded hover:bg-gray-300 focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+          </button>
+          <div id="dropdownMenu" class="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded shadow-lg">
+            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Settings</a>
+            <a href="./upload-image.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Change bg image</a>
+          </div>
+        </div>
+      </header>
+      <main class="">
+        <div class="grid gap-4 grid-cols-1 md:grid-cols-3 lg:grid-cols-4 p-4">
+            <div class="col-span-2">
+                <div class="bg-white p-8 rounded shadow-md w-full">
+                    <h2 class="text-xl font-bold mb-6">Upload Background Image</h2>
+                    <form id="uploadForm" class="space-y-4" aria-labelledby="uploadForm">
+                        <div>
+                            <label for="fileInput" class="block text-sm font-medium text-gray-700">Select Image</label>
+                            <input type="file" id="fileInput" name="fileInput" accept="image/*" class="mt-4 block w-full text-gray-700 border border-gray-300 rounded shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                        </div>
+                        <div class="flex gap-4 justify-end items-center mt-4">
+                            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none">Upload</button>
+                            <a href="index.html" class="text-gray-700 hover:underline">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+             </div>
+         </div>
+      </main>
+    <script>
+        document.getElementById('uploadForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Image uploaded successfully!');
+        });
+    </script>
+</body>
+</html>
